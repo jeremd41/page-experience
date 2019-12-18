@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
+import axios from "axios"
 
 const Wrapper = styled.div`{
     .filpost{
@@ -10,6 +11,10 @@ const Wrapper = styled.div`{
         h2{
             text-align: left;
             font-weight: bold;
+        }
+
+        .post{
+            border-top: 1px solid #111222;  
         }
     }
 
@@ -27,6 +32,23 @@ const Wrapper = styled.div`{
 }`
 
 class Home extends Component {
+
+    state={
+        messages:[]
+    }
+
+    componentDidMount() {
+        axios.get(`./db.json`)
+          .then(res => {
+            console.log(res.data)
+            this.setState({
+                 messages: res.data.posts
+            });
+            console.log(this.state.messages)
+          })
+          
+      }
+
     render(){
         return(
             <Wrapper className="columns">
@@ -54,6 +76,14 @@ class Home extends Component {
                                 <button class="button is-link">Post</button>
                             </div>
                         </div>
+                        {this.state.messages.map(mess =>{
+                            return(
+                            <div key={mess.id} className="post box">
+                                <p>{mess.firstName + ""+ mess.lastName}</p>
+                                <p>{mess.post}</p>
+                            </div>
+                            )
+                        })}
                     </div>
                 </div>
             </Wrapper>

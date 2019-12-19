@@ -2,11 +2,21 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import axios from "axios"
 
+import Article from "../component/Article"
+
 const Wrapper = styled.div`{
     .filpost{
         height:95vh;
         background: #fff;
         border: 1px solid rgba(0,0,0,.125);
+
+        footer{
+            float:right;
+        }
+
+        footer a{
+            margin: 0 15px;
+        }
 
         h2{
             text-align: left;
@@ -14,7 +24,9 @@ const Wrapper = styled.div`{
         }
 
         .post{
-            border-top: 1px solid #111222;  
+            border-radius: none;
+            border-top: 1px solid #222;
+            height: 40%;
         }
     }
 
@@ -27,14 +39,21 @@ const Wrapper = styled.div`{
         height:95vh;
         margin: 0 10px;
         background: #fff;
-        border: 1px solid rgba(0,0,0,.125);   
+        border: 1px solid rgba(0,0,0,.125);
+        
+        .article{
+            position:relative;
+            width: 30%;
+            margin: 15px;
+        }
     }
 }`
 
 class Home extends Component {
 
     state={
-        messages:[]
+        messages:[],
+        article:[]
     }
 
     componentDidMount() {
@@ -42,9 +61,9 @@ class Home extends Component {
           .then(res => {
             console.log(res.data)
             this.setState({
-                 messages: res.data.posts
+                messages: res.data.posts,
+                article: res.data.article
             });
-            console.log(this.state.messages)
           })
           
       }
@@ -60,6 +79,36 @@ class Home extends Component {
                         <i className="fas fa-search"></i>
                         </span>
                     </p>
+                </div>
+                <div>
+                    <h2>Latest pieces</h2>
+                    <div className="columns">
+                        {this.state.article.map(art =>{
+                            return(
+                                <Article 
+                                    className="column article is-one-quarter" 
+                                    key={art.id} 
+                                    author={art.author} 
+                                    title={art.title} 
+                                />
+                            )
+                        })}
+                    </div>
+                </div>
+                <div>
+                    <h2>Recommended</h2>
+                    <div className="columns">
+                        {this.state.article.map(art =>{
+                            return(
+                                <Article 
+                                    className="column article is-one-quarter" 
+                                    key={art.id} 
+                                    author={art.author} 
+                                    title={art.title} 
+                                />
+                            )
+                        })}
+                    </div>
                 </div>
                 </div>
                 <div className="column is-one-third filpost">
@@ -79,8 +128,13 @@ class Home extends Component {
                         {this.state.messages.map(mess =>{
                             return(
                             <div key={mess.id} className="post box">
-                                <p>{mess.firstName + ""+ mess.lastName}</p>
+                                <p className="title is-6">{mess.firstName + ""+ mess.lastName}</p>
                                 <p>{mess.post}</p>
+                                <footer>
+                                    <a href="#">Reply</a>
+                                    <a href="#">Like</a>
+                                    <a href="#">More</a>
+                                </footer>
                             </div>
                             )
                         })}

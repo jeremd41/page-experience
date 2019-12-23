@@ -3,6 +3,7 @@ import styled from "styled-components"
 import axios from "axios"
 
 import Article from "../component/Article"
+import Post from "../component/Post"
 
 const Wrapper = styled.div`{
     .filpost{
@@ -22,12 +23,15 @@ const Wrapper = styled.div`{
             text-align: left;
             font-weight: bold;
         }
+    }
 
-        .post{
-            border-radius: none;
-            border-top: 1px solid #222;
-            height: 40%;
-        }
+    h2{
+        text-align: left;
+    }
+
+    .article{
+        width: 30%;
+        margin: 35px;
     }
 
     .sendPost{
@@ -36,15 +40,14 @@ const Wrapper = styled.div`{
     }
 
     .filcenter{
-        height:95vh;
+        height:100%;
         margin: 0 10px;
         background: #fff;
         border: 1px solid rgba(0,0,0,.125);
-        
-        .article{
-            position:relative;
-            width: 30%;
-            margin: 15px;
+
+        .recommended{
+            margin-top: 25px;
+            height: 300px;
         }
     }
 }`
@@ -71,6 +74,9 @@ class Home extends Component {
     render(){
         return(
             <Wrapper className="columns">
+
+                {/*Sous ce commentaire partie centrale de la page home */}
+
                 <div className="column filcenter">
                 <div class="field">
                     <p className="control has-icons-left">
@@ -81,12 +87,12 @@ class Home extends Component {
                     </p>
                 </div>
                 <div>
-                    <h2>Latest pieces</h2>
+                    <h2 className="title is-5">Latest pieces</h2>
                     <div className="columns">
                         {this.state.article.map(art =>{
                             return(
                                 <Article 
-                                    className="column article is-one-quarter" 
+                                    className="article" 
                                     key={art.id} 
                                     author={art.author} 
                                     title={art.title} 
@@ -95,13 +101,13 @@ class Home extends Component {
                         })}
                     </div>
                 </div>
-                <div>
-                    <h2>Recommended</h2>
+                <div className="recommended">
+                    <h2 className="title is-5">Recommended</h2>
                     <div className="columns">
                         {this.state.article.map(art =>{
                             return(
                                 <Article 
-                                    className="column article is-one-quarter" 
+                                    className="article" 
                                     key={art.id} 
                                     author={art.author} 
                                     title={art.title} 
@@ -111,6 +117,9 @@ class Home extends Component {
                     </div>
                 </div>
                 </div>
+
+                {/*Sous ce commentaire partie droite de la page home */}
+
                 <div className="column is-one-third filpost">
                     <h2>What's happening</h2>
                     <div className="sendPost">    
@@ -127,15 +136,12 @@ class Home extends Component {
                         </div>
                         {this.state.messages.map(mess =>{
                             return(
-                            <div key={mess.id} className="post box">
-                                <p className="title is-6">{mess.firstName + ""+ mess.lastName}</p>
-                                <p>{mess.post}</p>
-                                <footer>
-                                    <a href="#">Reply</a>
-                                    <a href="#">Like</a>
-                                    <a href="#">More</a>
-                                </footer>
-                            </div>
+                                <Post 
+                                    key={mess.id} 
+                                    firstName={mess.firstName}
+                                    lastName={mess.lastName}
+                                    post={mess.post}
+                                />
                             )
                         })}
                     </div>

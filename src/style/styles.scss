@@ -29,6 +29,7 @@ $body-background-color: $beige-lighter;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
+$box-radius: 0px;
 
 // Import only what you need from Bulma
 @import '../../node_modules/bulma/css/bulma.min.css';
@@ -41,7 +42,7 @@ $input-shadow: none;
 .App {
   margin:0;
   padding: 10px;
-  height: 100vh;
+  height: 100%;
   font-family: 'Nunito', sans-serif;
   text-align: center;
   background: #E2E9EA;

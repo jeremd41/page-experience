@@ -2,42 +2,35 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import axios from "axios"
 
-import Article from "../component/Article"
-import Post from "../component/Post"
 import SearchBar from "../component/SearchBar"
+import Article from "../component/Article"
 
 const Wrapper = styled.div`{
+
+    h2{
+        text-align:left
+        margin: 5px 0;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    h3{
+        text-align: left;
+    }
+
+    h6{
+        text-align:left
+    }
+
+    p{
+        text-align: left;
+    }
+
     .filpost{
         height:95vh;
         background: #fff;
         border: 1px solid rgba(0,0,0,.125);
 
-        footer{
-            float:right;
-        }
-
-        footer a{
-            margin: 0 15px;
-        }
-
-        h2{
-            text-align: left;
-            font-weight: bold;
-        }
-    }
-
-    h2{
-        text-align: left;
-    }
-
-    .article{
-        width: 30%;
-        margin: 35px;
-    }
-
-    .sendPost{
-        text-align: left;
-        margin-top: 25px;
     }
 
     .filcenter{
@@ -45,15 +38,10 @@ const Wrapper = styled.div`{
         margin: 0 10px;
         background: #fff;
         border: 1px solid rgba(0,0,0,.125);
-
-        .recommended{
-            margin-top: 25px;
-            height: 300px;
-        }
     }
 }`
 
-class Home extends Component {
+class MyProfile extends Component {
 
     state={
         messages:[],
@@ -63,7 +51,6 @@ class Home extends Component {
     componentDidMount() {
         axios.get(`./db.json`)
           .then(res => {
-            console.log(res.data)
             this.setState({
                 messages: res.data.posts,
                 article: res.data.article
@@ -80,16 +67,45 @@ class Home extends Component {
 
                 <div className="column filcenter">
                     <SearchBar />
+                    <div className="box">
+                        <div className="columns">
+                            <div className="column is-one-quarter">
+                                <figure className="image is-128x128">
+                                    <img src="https://bulma.io/images/placeholders/128x128.png"/>
+                                </figure>
+                            </div>
+                            <div className="column is-three-quarter">
+                                <h2 className="is-4">Nom Prénom</h2>
+                                <p>Magna laboris sit deserunt duis irure nostrud et.Magna laboris sit deserunt duis irure nostrud et.Magna laboris sit deserunt duis irure nostrud et.</p>
+                                <h6><i className="fas fa-map-marker-alt"/> Localisation</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="box">
+                        <h3 className="title is-5">Works</h3>
+                        <div className="columns">
+                            {this.state.article.map(art =>{
+                                return(
+                                    <Article 
+                                        className="article" 
+                                        key={art.id} 
+                                        author={art.author} 
+                                        title={art.title} 
+                                    />
+                                )
+                            })}
+                        </div>
+                    </div>
                 </div>
 
                 {/*Sous ce commentaire partie droite de la page Profile */}
 
                 <div className="column is-one-third filpost">
-                
+                    
                 </div>
             </Wrapper>
         )
     }
 }
 
-export default Home
+export default MyProfile

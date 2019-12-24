@@ -63,13 +63,11 @@ class Home extends Component {
     componentDidMount() {
         axios.get(`./db.json`)
           .then(res => {
-            console.log(res.data)
             this.setState({
                 messages: res.data.posts,
                 article: res.data.article
             });
           })
-          
       }
 
     render(){

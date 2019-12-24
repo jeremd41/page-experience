@@ -4,6 +4,7 @@ import axios from "axios"
 
 import Article from "../component/Article"
 import Post from "../component/Post"
+import SearchBar from "../component/SearchBar"
 
 const Wrapper = styled.div`{
     .filpost{
@@ -78,14 +79,7 @@ class Home extends Component {
                 {/*Sous ce commentaire partie centrale de la page home */}
 
                 <div className="column filcenter">
-                <div class="field">
-                    <p className="control has-icons-left">
-                        <input className="input" type="text" placeholder="Search"/>
-                        <span className="icon is-small is-left">
-                        <i className="fas fa-search"></i>
-                        </span>
-                    </p>
-                </div>
+                    <SearchBar />
                 <div>
                     <h2 className="title is-5">Latest pieces</h2>
                     <div className="columns">

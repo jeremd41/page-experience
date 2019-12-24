@@ -46,12 +46,14 @@ class Navbar extends Component {
     render(){
         return(
             <Nav className="menu">
-                <h1 className="is-title is-1">Logo</h1>
-                <p className="control">
-                    <button className="button is-link">
-                    <i className="fas fa-user"/>   Profile
-                    </button>
-                </p>
+                <Link to="/"><h1 className="is-title is-1">Logo</h1></Link>
+                <Link to="/MyProfile">
+                    <p className="control">
+                        <button className="button is-link">
+                        <i className="fas fa-user"/>   Profile
+                        </button>
+                    </p>
+                </Link>
                 <p className="control">
                     <button className="button is-link">
                     <i className="fas fa-plus"/>   Create

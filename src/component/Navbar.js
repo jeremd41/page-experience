@@ -61,7 +61,7 @@ class Navbar extends Component {
                 </p>
                 <ul className="menu-list is-link">
                 <li className="is-link">
-                    <Link><i className="fas fa-home"/>Home</Link>  
+                    <Link to="/"><i className="fas fa-home"/>Home</Link>  
                 </li>
                 <li>
                     <Link><i className="fas fa-file-alt"/>Journals</Link>  

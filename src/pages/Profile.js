@@ -4,11 +4,12 @@ import axios from "axios"
 
 import SearchBar from "../component/SearchBar"
 import Article from "../component/Article"
+import SuscribeUser from "../component/SuscribeUser"
 
 const Wrapper = styled.div`{
 
     h2{
-        text-align:left
+        text-align:left;
         margin: 5px 0;
         font-weight: bold;
         font-size: 1.2rem;
@@ -44,7 +45,7 @@ const Wrapper = styled.div`{
 class MyProfile extends Component {
 
     state={
-        messages:[],
+        users:[],
         article:[]
     }
 
@@ -52,7 +53,7 @@ class MyProfile extends Component {
         axios.get(`./db.json`)
           .then(res => {
             this.setState({
-                messages: res.data.posts,
+                users: res.data.users,
                 article: res.data.article
             });
           })
@@ -101,7 +102,17 @@ class MyProfile extends Component {
                 {/*Sous ce commentaire partie droite de la page Profile */}
 
                 <div className="column is-one-third filpost">
-                    
+                    <h3 className="title is-5">Recommended</h3>
+                    {this.state.users.map(us =>{
+                                return(
+                                    <SuscribeUser 
+                                        className="" 
+                                        key={us.id} 
+                                        name={us.name}
+                                        fonc={us.fonction}
+                                    />
+                                )
+                    })}
                 </div>
             </Wrapper>
         )

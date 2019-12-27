@@ -26,6 +26,28 @@
             "title":"following the rules",
             "author":"Marck Dickson"
         }
+    ],
+    "users":[
+        {
+            "id":"1",
+            "name": "Brianna Ryder",
+            "fonction":"HR Extraordinaire"
+        },
+        {
+            "id":"2",
+            "name": "Francis Crawder",
+            "fonction":"HR Extraordinaire"
+        },
+        {
+            "id":"3",
+            "name": "Ryana Ryder",
+            "fonction":"HR Extraordinaire"
+        },
+        {
+            "id":"4",
+            "name": "Brianna Black",
+            "fonction":"HR Extraordinaire"
+        }
     ]
 }
 

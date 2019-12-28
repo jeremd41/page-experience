@@ -4,6 +4,14 @@ import styled from "styled-components"
 const Wrapper = styled.div`
     width:100%;
 
+    footer{
+        float:right;
+    }
+
+    footer a{
+        margin: 0 15px;
+    }
+
 `;
 
 export default function Post(props){

@@ -15,6 +15,11 @@ const Wrapper = styled.div`{
         font-size: 1.2rem;
     }
 
+    h4{
+        text-align: left;
+        font-weight: bold;
+    }
+
     h3{
         text-align: left;
     }
@@ -39,6 +44,14 @@ const Wrapper = styled.div`{
         margin: 0 10px;
         background: #fff;
         border: 1px solid rgba(0,0,0,.125);
+
+        footer{
+            float:right;
+        }
+
+        footer a{
+            margin: 0 15px;
+        }
     }
 }`
 
@@ -80,6 +93,23 @@ class MyProfile extends Component {
                                 <p>Magna laboris sit deserunt duis irure nostrud et.Magna laboris sit deserunt duis irure nostrud et.Magna laboris sit deserunt duis irure nostrud et.</p>
                                 <h6><i className="fas fa-map-marker-alt"/> Localisation</h6>
                             </div>
+                        </div>
+                        <div className="box">
+                            <div className="columns">
+                                <div className="column is-one-quarter">
+                                    <figure className="image is-64x64">
+                                        <img src="https://bulma.io/images/placeholders/64x64.png"/>
+                                    </figure>
+                                </div>
+                                <div className="column is-three-quarter">
+                                    <h4>Nom Prénom      .date</h4>
+                                    <p>Irure pariatur sint et do adipisicing dolore amet.Sunt aliquip amet occaecat nulla consectetur anim laborum anim incididunt est.</p>
+                                    <footer>
+                                        <a href="#">React</a>
+                                        <a href="#">More</a>
+                                    </footer>
+                                </div>
+                            </div> 
                         </div>
                     </div>
                     <div className="box">

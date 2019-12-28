@@ -12,13 +12,6 @@ const Wrapper = styled.div`{
         background: #fff;
         border: 1px solid rgba(0,0,0,.125);
 
-        footer{
-            float:right;
-        }
-
-        footer a{
-            margin: 0 15px;
-        }
 
         h2{
             text-align: left;

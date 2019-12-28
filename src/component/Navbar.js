@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components"
 
+import PostModal from "./PostModal"
+
 const Nav = styled.aside`
     width: 20%;
     background: #fff;
@@ -43,7 +45,26 @@ const Nav = styled.aside`
 
 
 class Navbar extends Component {
+    state={
+        modalVisible: false
+    }
+
+    handleClick = () => {
+        this.setState({
+          modalVisible: !this.state.modalVisible
+        });
+
+        console.log(this.state)
+    };
+
     render(){
+
+        let modal;
+
+        if (this.state.modalVisible) {
+        modal = <PostModal cache={this.handleClick} visible={this.state.modalVisible}/> ;
+        }
+
         return(
             <Nav className="menu">
                 <Link to="/"><h1 className="is-title is-1">Logo</h1></Link>
@@ -54,7 +75,7 @@ class Navbar extends Component {
                         </button>
                     </p>
                 </Link>
-                <p className="control">
+                <p className="control" onClick={this.handleClick}>
                     <button className="button is-link">
                     <i className="fas fa-plus"/>   Create
                     </button>
@@ -70,6 +91,7 @@ class Navbar extends Component {
                     <Link><i className="fas fa-bell"/>Notifications</Link>  
                 </li>
                 </ul>
+                {modal}
             </Nav>
 
         )

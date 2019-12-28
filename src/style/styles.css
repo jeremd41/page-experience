@@ -14,4 +14,14 @@
   text-align: center;
   background: #E2E9EA;
 }
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  z-index: 13;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 /*# sourceMappingURL=styles.css.map */

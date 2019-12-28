@@ -47,3 +47,13 @@ $box-radius: 0px;
   text-align: center;
   background: #E2E9EA;
 }
+
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  z-index: 1100;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

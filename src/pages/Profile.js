@@ -45,6 +45,11 @@ const Wrapper = styled.div`{
         background: #fff;
         border: 1px solid rgba(0,0,0,.125);
 
+        .comment{
+            padding: 20px 25px;
+            border-top: 1px solid #DCD5D4;
+        }
+
         footer{
             float:right;
         }
@@ -94,7 +99,7 @@ class MyProfile extends Component {
                                 <h6><i className="fas fa-map-marker-alt"/> Localisation</h6>
                             </div>
                         </div>
-                        <div className="box">
+                        <div className="comment">
                             <div className="columns">
                                 <div className="column is-one-quarter">
                                     <figure className="image is-64x64">

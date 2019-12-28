@@ -1,0 +1,17 @@
+/*--------------------------------------------------------------*/
+/* ------                  CONFIG BULMA                   ------*/
+/*--------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+@import url(/home/webizy/Bureau/Devweb/page-experience/node_modules/bulma/css/bulma.min.css);
+/*--------------------------------------------------------------*/
+/* ------             REGLES DEFAULT CSS                  ------*/
+/*--------------------------------------------------------------*/
+.App {
+  margin: 0;
+  padding: 10px;
+  height: 100%;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  background: #E2E9EA;
+}
+/*# sourceMappingURL=styles.css.map */

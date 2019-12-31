@@ -8,9 +8,7 @@ import SearchBar from "../component/SearchBar"
 
 const Wrapper = styled.div`{
     .filpost{
-        height:95vh;
-        background: #fff;
-        border: 1px solid rgba(0,0,0,.125);
+        height:auto;
 
 
         h2{
@@ -20,7 +18,9 @@ const Wrapper = styled.div`{
     }
 
     h2{
+        padding: 5px;
         text-align: left;
+        border-bottom: 1px solid #DCD5D4;
     }
 
     .article{
@@ -29,8 +29,19 @@ const Wrapper = styled.div`{
     }
 
     .sendPost{
+        padding: 10px;
         text-align: left;
-        margin-top: 25px;
+        background: #fff;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: 5px;
+    }
+
+    .userPost{
+            padding: 10px;
+            text-align: left;
+            background: #fff;
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: 5px;
     }
 
     .filcenter{
@@ -38,6 +49,7 @@ const Wrapper = styled.div`{
         margin: 0 10px;
         background: #fff;
         border: 1px solid rgba(0,0,0,.125);
+        border-radius: 5px;
 
         .recommended{
             margin-top: 25px;
@@ -106,8 +118,8 @@ class Home extends Component {
                 {/*Sous ce commentaire partie droite de la page home */}
 
                 <div className="column is-one-third filpost">
-                    <h2>What's happening</h2>
-                    <div className="sendPost">    
+                    <div className="sendPost"> 
+                        <h2>What's happening</h2>   
                         <div className="field">
                             <p className="label">Post :</p>
                             <div className="control">
@@ -116,18 +128,20 @@ class Home extends Component {
                         </div>
                         <div class="field is-grouped is-grouped-right">
                             <div class="control">
-                                <button class="button is-link">Post</button>
+                                <button class="button is-light">Post</button>
                             </div>
                         </div>
+                    </div>
+                    <div className="userPost">
                         {this.state.messages.map(mess =>{
-                            return(
-                                <Post 
-                                    key={mess.id} 
-                                    firstName={mess.firstName}
-                                    lastName={mess.lastName}
-                                    post={mess.post}
-                                />
-                            )
+                                return(
+                                    <Post 
+                                        key={mess.id} 
+                                        firstName={mess.firstName}
+                                        lastName={mess.lastName}
+                                        post={mess.post}
+                                    />
+                                )
                         })}
                     </div>
                 </div>

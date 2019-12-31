@@ -3,9 +3,30 @@ import styled from "styled-components"
 
 const Wrapper = styled.div`
     width:100%;
+    height: auto;
+    border-top: 1px solid #DCD5D4;
+    position: relative;
+    padding: 10px;
+
+    .userName{
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    a{
+        color: black;
+        padding: 2px;
+
+        :hover{
+            border-radius: 2px;
+            background: #DCD5D4;
+        }
+    }
 
     footer{
-        float:right;
+        display: flex;
+        justify-content: flex-end;
+        margin-top 10px;
     }
 
     footer a{
@@ -16,8 +37,8 @@ const Wrapper = styled.div`
 
 export default function Post(props){
     return(
-    <Wrapper className="post box">
-        <p className="title is-6">{props.firstName + ""+ props.lastName}</p>
+    <Wrapper>
+        <p className="userName is-6">{props.firstName + ""+ props.lastName}</p>
         <p>{props.post}</p>
         <footer>
             <a href="#">Reply</a>

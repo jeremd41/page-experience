@@ -9,10 +9,15 @@ const Nav = styled.aside`
     background: #fff;
     height: 95vh;
     border: 1px solid rgba(0,0,0,.125);
+    border-radius: 5px;
 
     ul{
         border-top: 1px solid rgba(0,0,0,.125);
         border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+
+    a{
+        color: black;
     }
 
     i{
@@ -70,18 +75,18 @@ class Navbar extends Component {
                 <Link to="/"><h1 className="is-title is-1">Logo</h1></Link>
                 <Link to="/MyProfile">
                     <p className="control">
-                        <button className="button is-link">
+                        <button className="button is-light">
                         <i className="fas fa-user"/>   Profile
                         </button>
                     </p>
                 </Link>
                 <p className="control" onClick={this.handleClick}>
-                    <button className="button is-link">
+                    <button className="button is-light">
                     <i className="fas fa-plus"/>   Create
                     </button>
                 </p>
                 <ul className="menu-list is-link">
-                <li className="is-link">
+                <li>
                     <Link to="/"><i className="fas fa-home"/>Home</Link>  
                 </li>
                 <li>

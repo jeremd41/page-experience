@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+
 /*--------------------------------------------------------------*/
 /* ------                  CONFIG BULMA                   ------*/
 /*--------------------------------------------------------------*/
@@ -45,7 +46,11 @@ $box-radius: 0px;
   height: 100%;
   font-family: 'Nunito', sans-serif;
   text-align: center;
-  background: #E2E9EA;
+  background: #DCD5D4;
+}
+
+a{
+  color: black;
 }
 
 .overlay {

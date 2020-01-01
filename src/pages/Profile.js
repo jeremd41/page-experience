@@ -43,6 +43,7 @@ const Wrapper = styled.div`{
     }
 
     .filpost{
+        margin-top: 10px;
         height:95vh;
         background: #fff;
         border: 1px solid rgba(0,0,0,.125);
@@ -53,8 +54,27 @@ const Wrapper = styled.div`{
     .filcenter{
         height:100%;
         margin: 0 10px;
-        /*background: #fff;
-        border: 1px solid rgba(0,0,0,.125);*/
+
+        .center{
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #DCD5D4;
+            border-radius: 5px;
+        }
+
+        .works{
+            margin-top: 10px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #DCD5D4;
+            border-radius: 5px;
+
+            h3{
+                padding: 5px;
+                text-align: left;
+                border-bottom: 1px solid #DCD5D4;
+            }
+        }
 
         .comment{
             padding: 20px 25px;
@@ -97,11 +117,11 @@ class MyProfile extends Component {
 
                 <div className="column filcenter">
                     <SearchBar />
-                    <div className="box">
+                    <div className="center">
                         <div className="columns">
                             <div className="column is-one-quarter">
                                 <figure className="image is-128x128">
-                                    <img src="https://bulma.io/images/placeholders/128x128.png"/>
+                                    <img className="image-rad" src="https://bulma.io/images/placeholders/128x128.png"/>
                                 </figure>
                             </div>
                             <div className="column is-three-quarter">
@@ -114,7 +134,7 @@ class MyProfile extends Component {
                             <div className="columns">
                                 <div className="column is-one-quarter">
                                     <figure className="image is-64x64">
-                                        <img src="https://bulma.io/images/placeholders/64x64.png"/>
+                                        <img className="image-rad" src="https://bulma.io/images/placeholders/64x64.png"/>
                                     </figure>
                                 </div>
                                 <div className="column is-three-quarter">
@@ -128,7 +148,7 @@ class MyProfile extends Component {
                             </div> 
                         </div>
                     </div>
-                    <div className="box">
+                    <div className="works">
                         <h3 className="title is-5">Works</h3>
                         <div className="columns">
                             {this.state.article.map(art =>{

@@ -26,14 +26,14 @@ export default function SuscribeUser(props){
             <div className="columns">
                 <div className="column is-one-third">
                     <figure className="image is-96x96">
-                        <img src="https://bulma.io/images/placeholders/96x96.png"/>
+                        <img className="image-rad" src="https://bulma.io/images/placeholders/96x96.png"/>
                     </figure>
                 </div>
                 <div className="column is-two-third">
                     <h3 classNa>{props.name}</h3>
                     <p>{props.fonc}</p>
                     <div className="buttons is-left">
-                        <button className="btn-suscribe button is-small is-link is-outlined">Suscribe +</button>
+                        <button className="btn-suscribe button is-small is-black is-outlined">Suscribe +</button>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,8 @@ const Wrapper = styled.div`
     }
 
     .art{
-        width: 30%;
+        border: 1px solid #DCD5D4;
+        border-radius: 5px;
     }
 
 `;
@@ -19,7 +20,7 @@ class Article extends Component{
     render(){
         return(
             <Wrapper>
-                <div class="card">
+                <div className="art">
                     <div class="card-image">
                         <figure class="image is-128x128">
                             <img src="https://bulma.io/images/placeholders/256x256.png" alt="Placeholder image"/>

@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Wrapper = styled.div`
     width:100%;
     height: auto;
-    border-top: 1px solid #DCD5D4;
+    border-bottom: 1px solid #DCD5D4;
     position: relative;
     padding: 10px;
 

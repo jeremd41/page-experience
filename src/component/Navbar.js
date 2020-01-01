@@ -8,6 +8,7 @@ const Nav = styled.aside`
     width: 20%;
     background: #fff;
     height: 95vh;
+    margin-top: 10px;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 5px;
 
@@ -72,7 +73,7 @@ class Navbar extends Component {
 
         return(
             <Nav className="menu">
-                <Link to="/"><h1 className="is-title is-1">Logo</h1></Link>
+                <Link to="/"><h1 className="is-title is-1">Page-experience</h1></Link>
                 <Link to="/MyProfile">
                     <p className="control">
                         <button className="button is-light">

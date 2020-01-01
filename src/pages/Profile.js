@@ -15,6 +15,16 @@ const Wrapper = styled.div`{
         font-size: 1.2rem;
     }
 
+    a{
+        color: black;
+        padding: 2px;
+
+        :hover{
+            border-radius: 2px;
+            background: #DCD5D4;
+        }
+    }
+
     h4{
         text-align: left;
         font-weight: bold;
@@ -36,14 +46,15 @@ const Wrapper = styled.div`{
         height:95vh;
         background: #fff;
         border: 1px solid rgba(0,0,0,.125);
+        border-radius: 5px;
 
     }
 
     .filcenter{
         height:100%;
         margin: 0 10px;
-        background: #fff;
-        border: 1px solid rgba(0,0,0,.125);
+        /*background: #fff;
+        border: 1px solid rgba(0,0,0,.125);*/
 
         .comment{
             padding: 20px 25px;

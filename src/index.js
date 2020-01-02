@@ -6,6 +6,7 @@ import "./style/styles.scss";
 import Layout from "./component/Layout";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile"
+import ViewArticle from "./pages/ViewArticle";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/MyProfile" component={Profile} />
+            <Route path="/article/:art_id" component={ViewArticle} />
           </Switch>
         </Layout>      
       </Router>

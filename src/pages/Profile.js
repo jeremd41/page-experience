@@ -42,6 +42,11 @@ const Wrapper = styled.div`{
         text-align: left;
     }
 
+    .article{
+        width: 30%;
+        margin: 35px;
+    }
+
     .filpost{
         margin-top: 10px;
         height:95vh;
@@ -155,7 +160,8 @@ class MyProfile extends Component {
                                 return(
                                     <Article 
                                         className="article" 
-                                        key={art.id} 
+                                        key={art.id}
+                                        id={art.id}
                                         author={art.author} 
                                         title={art.title} 
                                     />

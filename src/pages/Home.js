@@ -107,7 +107,8 @@ class Home extends Component {
                                 return(
                                     <Article 
                                         className="article" 
-                                        key={art.id} 
+                                        key={art.id}
+                                        id={art.id}
                                         author={art.author} 
                                         title={art.title} 
                                     />
@@ -123,7 +124,8 @@ class Home extends Component {
                             return(
                                 <Article 
                                     className="article" 
-                                    key={art.id} 
+                                    key={art.id}
+                                    id={art.id}
                                     author={art.author} 
                                     title={art.title} 
                                 />

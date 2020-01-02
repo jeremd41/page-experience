@@ -19,11 +19,13 @@
         {
             "id":"1",
             "title":"following the rules",
+            "content":"Deserunt velit magna et sunt aliqua excepteur eu consequat. Fugiat cupidatat id ullamco sint eu est minim velit consequat velit eiusmod et ad culpa. Proident cupidatat occaecat et dolor ad cillum aliquip.",
             "author":"Marck Dickson"
         },
         {
             "id":"2",
-            "title":"following the rules",
+            "title":"TEST TEST",
+            "content":"Deserunt velit magna et sunt aliqua excepteur eu consequat. Fugiat cupidatat id ullamco sint eu est minim velit consequat velit eiusmod et ad culpa. Proident cupidatat occaecat et dolor ad cillum aliquip.",
             "author":"Marck Dickson"
         }
     ],
